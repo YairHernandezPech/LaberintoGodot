@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://ko27r5itk0l"]
+[gd_scene load_steps=7 format=3 uid="uid://ko27r5itk0l"]
 
 [ext_resource type="Texture2D" uid="uid://cbmb5cipyhb2u" path="res://Assest/Terrain/Terrain (16x16).png" id="1_aie8f"]
 [ext_resource type="Texture2D" uid="uid://b1obaodhwyla4" path="res://Assest/fondo/background_5.png" id="2_mmtxm"]
+[ext_resource type="PackedScene" uid="uid://dyaxcf6gvshik" path="res://Lib/player_1.tscn" id="3_j0ssy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mkk5h"]
 texture = ExtResource("1_aie8f")
@@ -98,6 +99,10 @@ terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_mkk5h")
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_fpxu7"]
+a = Vector2(-249, 691)
+b = Vector2(-248, 55)
+
 [node name="Mundo1" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -113,3 +118,11 @@ layer_0/tile_data = PackedInt32Array(3866624, 0, 9, 3932278, 65536, 9, 3932279, 
 position = Vector2(904, 176)
 scale = Vector2(5.54167, 5.85915)
 texture = ExtResource("2_mmtxm")
+
+[node name="Player1" parent="." instance=ExtResource("3_j0ssy")]
+position = Vector2(-114, 380)
+
+[node name="Muro" type="CollisionShape2D" parent="."]
+position = Vector2(305, 229)
+shape = SubResource("SegmentShape2D_fpxu7")
+debug_color = Color(0.668189, 0.0640585, 0.16757, 0.419608)
