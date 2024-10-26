@@ -1,0 +1,161 @@
+[gd_scene load_steps=21 format=3 uid="uid://dyaxcf6gvshik"]
+
+[ext_resource type="Texture2D" uid="uid://cnvrb5v5pge27" path="res://Assest/personaje.png" id="1_2xebe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_heajw"]
+atlas = ExtResource("1_2xebe")
+region = Rect2(480, 360, 80, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yoc4x"]
+atlas = ExtResource("1_2xebe")
+region = Rect2(560, 360, 80, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ldk0d"]
+atlas = ExtResource("1_2xebe")
+region = Rect2(640, 360, 80, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72d4r"]
+atlas = ExtResource("1_2xebe")
+region = Rect2(720, 360, 80, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g64tt"]
+atlas = ExtResource("1_2xebe")
+region = Rect2(800, 360, 80, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xtje"]
+atlas = ExtResource("1_2xebe")
+region = Rect2(880, 360, 80, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2swd"]
+atlas = ExtResource("1_2xebe")
+region = Rect2(480, 0, 80, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8ot3"]
+atlas = ExtResource("1_2xebe")
+region = Rect2(560, 0, 80, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fopcb"]
+atlas = ExtResource("1_2xebe")
+region = Rect2(640, 0, 80, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dishq"]
+atlas = ExtResource("1_2xebe")
+region = Rect2(720, 0, 80, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ue55d"]
+atlas = ExtResource("1_2xebe")
+region = Rect2(800, 0, 80, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58lji"]
+atlas = ExtResource("1_2xebe")
+region = Rect2(880, 0, 80, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8kgfe"]
+atlas = ExtResource("1_2xebe")
+region = Rect2(480, 120, 80, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gn0pv"]
+atlas = ExtResource("1_2xebe")
+region = Rect2(560, 120, 80, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x81a8"]
+atlas = ExtResource("1_2xebe")
+region = Rect2(640, 120, 80, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdv8f"]
+atlas = ExtResource("1_2xebe")
+region = Rect2(480, 240, 80, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_33e52"]
+atlas = ExtResource("1_2xebe")
+region = Rect2(560, 240, 80, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fw8hb"]
+atlas = ExtResource("1_2xebe")
+region = Rect2(640, 240, 80, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hsagl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_heajw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yoc4x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ldk0d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72d4r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g64tt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xtje")
+}],
+"loop": true,
+"name": &"back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2swd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f8ot3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fopcb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dishq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ue55d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58lji")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8kgfe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gn0pv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x81a8")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdv8f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_33e52")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fw8hb")
+}],
+"loop": true,
+"name": &"righ",
+"speed": 5.0
+}]
+
+[node name="Player1" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(136, 240)
+scale = Vector2(0.4, 0.35)
+sprite_frames = SubResource("SpriteFrames_hsagl")
+animation = &"back"
+frame_progress = 0.132232
