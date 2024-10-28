@@ -7,6 +7,7 @@ var dir = Vector2.RIGHT
 
 func _ready():
 	add_to_group("player")#esto es para crear un grupo
+	
 enum {
 	IDLE,
 	NEW_DIR

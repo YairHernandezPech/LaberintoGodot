@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://df7vn437m54hd"]
+
+[ext_resource type="Texture2D" uid="uid://bijjsan8mxjkf" path="res://Assest/Item 3-1.png.png" id="1_4kj5q"]
+[ext_resource type="Script" path="res://Lib/life.gd" id="1_7s44q"]
+
+[node name="Life" type="CanvasLayer"]
+script = ExtResource("1_7s44q")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 936.0
+offset_top = 8.0
+offset_right = 1032.0
+offset_bottom = 50.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(965.75, 35.6875)
+scale = Vector2(1.67969, 1.63477)
+texture = ExtResource("1_4kj5q")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1000.0
+offset_top = 8.0
+offset_right = 1040.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 30
+text = "0"

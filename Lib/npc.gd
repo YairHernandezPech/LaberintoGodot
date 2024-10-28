@@ -21,5 +21,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		dialog_box.dialogue_index = 0
 		dialog_box.update_dialogue() 
 		print("tocando al npc")
+		$AudioStreamPlayer2D.play()
 	pass
 	
