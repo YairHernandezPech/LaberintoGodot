@@ -1,9 +1,12 @@
 extends CharacterBody2D
 
-const speed = 60
+const speed = 120
 var current_state = IDLE
 var is_roaming = true
 var dir = Vector2.RIGHT
+
+func _ready():
+	add_to_group("player")#esto es para crear un grupo
 enum {
 	IDLE,
 	NEW_DIR

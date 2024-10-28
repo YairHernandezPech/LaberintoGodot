@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5jjwo5jrc56d"]
+
+[ext_resource type="Texture2D" uid="uid://j24n428ri242" path="res://Assest/dialog.png" id="1_dohem"]
+[ext_resource type="Script" path="res://Lib/dialog.gd" id="2_d3rxn"]
+
+[node name="Dialog" type="TextureRect"]
+offset_left = 88.0
+offset_top = 40.0
+offset_right = 688.0
+offset_bottom = 640.0
+texture = ExtResource("1_dohem")
+script = ExtResource("2_d3rxn")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 280.0
+offset_right = 496.0
+offset_bottom = 344.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20

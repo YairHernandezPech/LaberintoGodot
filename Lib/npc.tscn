@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://bn0v5nol6sgvr"]
+
+[ext_resource type="Script" path="res://Lib/npc.gd" id="1_5v4w3"]
+[ext_resource type="Texture2D" uid="uid://cnvrb5v5pge27" path="res://Assest/personaje.png" id="1_aeeyv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lig2v"]
+atlas = ExtResource("1_aeeyv")
+region = Rect2(0, 480, 80, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31njk"]
+atlas = ExtResource("1_aeeyv")
+region = Rect2(80, 480, 80, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_28gl4"]
+atlas = ExtResource("1_aeeyv")
+region = Rect2(160, 480, 80, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_825q6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lig2v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31njk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_28gl4")
+}],
+"loop": true,
+"name": &"npc",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eh3bh"]
+radius = 16.0
+height = 48.0
+
+[node name="npc" type="CharacterBody2D"]
+script = ExtResource("1_5v4w3")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(368, 232)
+scale = Vector2(0.7, 0.566667)
+sprite_frames = SubResource("SpriteFrames_825q6")
+animation = &"npc"
+frame_progress = 0.443839
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(368, 240)
+shape = SubResource("CapsuleShape2D_eh3bh")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

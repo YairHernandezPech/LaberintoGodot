@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dyaxcf6gvshik"]
+[gd_scene load_steps=24 format=3 uid="uid://dyaxcf6gvshik"]
 
 [ext_resource type="Texture2D" uid="uid://cnvrb5v5pge27" path="res://Assest/personaje.png" id="1_2xebe"]
 [ext_resource type="Script" path="res://Lib/player_1.gd" id="1_4agjn"]
@@ -152,6 +152,14 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pk28m"]
+radius = 8.0
+height = 48.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_igpvi"]
+radius = 8.0
+height = 48.0
+
 [node name="Player1" type="CharacterBody2D"]
 script = ExtResource("1_4agjn")
 
@@ -159,4 +167,20 @@ script = ExtResource("1_4agjn")
 position = Vector2(145.5, 229)
 scale = Vector2(0.6375, 0.533333)
 sprite_frames = SubResource("SpriteFrames_hsagl")
-animation = &"right"
+animation = &"back"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(144, 232)
+shape = SubResource("CapsuleShape2D_pk28m")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(152, 232)
+zoom = Vector2(1.5, 1.5)
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(144, 232)
+shape = SubResource("CapsuleShape2D_igpvi")
