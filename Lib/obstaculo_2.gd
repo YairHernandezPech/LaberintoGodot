@@ -2,7 +2,7 @@ extends Node2D
 
 var number_7_pressed = false
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	# numero 35
 	
 	if Input.is_action_just_pressed("number_7"):

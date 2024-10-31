@@ -14,13 +14,13 @@
 [ext_resource type="Script" path="res://Lib/obstaculo_4.gd" id="10_jgwg3"]
 [ext_resource type="Script" path="res://Lib/obstaculo_5.gd" id="11_0nxmv"]
 [ext_resource type="PackedScene" uid="uid://x7jnwpnlvp7k" path="res://Lib/time.tscn" id="12_upqem"]
-[ext_resource type="AudioStream" uid="uid://clvk37rd1h4ku" path="res://Assest/Grabación (mp3cut.net).mp3" id="13_qv5l3"]
 [ext_resource type="AudioStream" uid="uid://byw6uijimpxwp" path="res://Assest/Cyborg Justice Mega Drive Title Music.mp3" id="13_rdtrk"]
 [ext_resource type="Script" path="res://Lib/audio.gd" id="14_aq1kf"]
 [ext_resource type="AudioStream" uid="uid://drmv1hsbll4o3" path="res://Assest/Grabación2.mp3" id="14_vgy3k"]
 [ext_resource type="AudioStream" uid="uid://cjpg4apeasggw" path="res://Assest/Grabación3.mp3" id="15_amn1c"]
 [ext_resource type="AudioStream" uid="uid://cgm4mf48sxggl" path="res://Assest/Grabación 4.mp3" id="16_yp7vv"]
 [ext_resource type="AudioStream" uid="uid://cvwlr6mgfdlgv" path="res://Assest/Grabación5.mp3" id="17_amc6m"]
+[ext_resource type="AudioStream" uid="uid://bixn8d2wji2tn" path="res://Assest/Grabación1.mp3" id="17_f00mo"]
 [ext_resource type="Script" path="res://Lib/obstaculo_6.gd" id="22_q52xb"]
 [ext_resource type="Script" path="res://Lib/obstaculo_7.gd" id="23_uwq41"]
 
@@ -267,7 +267,7 @@ visible = false
 dialogues = Array[String](["Hola, bienvenido a nuestro laberinto.", "Espero que disfrutes tu estancia.", "Es hora de poner a prueba tu", "Inteligencia matematica"])
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="npc"]
-stream = ExtResource("13_qv5l3")
+stream = ExtResource("17_f00mo")
 volume_db = -2.667
 
 [node name="npc2" parent="." instance=ExtResource("4_miwj6")]

@@ -5,7 +5,7 @@ extends TextureRect
 var dialogue_index: int = 0
 
 @onready var dialogue_label: Label = $Label
-
+#signal dialogue_finished
 func _ready() -> void:
 	visible = false
 	update_dialogue()
@@ -21,3 +21,8 @@ func _input(event: InputEvent) -> void:
 		else:
 			dialogue_index = 0
 			visible = false
+			#emit_signal("dialogue_finished")
+
+
+#func _on_dialogue_finished() -> void:
+#	pass # Replace with function body.
