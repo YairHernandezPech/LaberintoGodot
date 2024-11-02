@@ -153,24 +153,24 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pk28m"]
-radius = 8.0
+radius = 16.0
 height = 48.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_igpvi"]
-radius = 8.0
+radius = 16.0
 height = 48.0
 
 [node name="Player1" type="CharacterBody2D"]
 script = ExtResource("1_4agjn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(145.5, 229)
+position = Vector2(152, 224)
 scale = Vector2(0.6375, 0.533333)
 sprite_frames = SubResource("SpriteFrames_hsagl")
 animation = &"back"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(144, 232)
+position = Vector2(152, 224)
 shape = SubResource("CapsuleShape2D_pk28m")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -182,5 +182,5 @@ rotation_smoothing_enabled = true
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(144, 232)
+position = Vector2(152, 224)
 shape = SubResource("CapsuleShape2D_igpvi")
