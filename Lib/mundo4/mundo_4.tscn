@@ -104,7 +104,7 @@ terrain_set_0/terrain_0/color = Color(0.668724, 3.3499e-05, 0.509482, 1)
 sources/0 = SubResource("TileSetAtlasSource_3hfek")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1rj5a"]
-size = Vector2(44, 43.3281)
+size = Vector2(44, 46.664)
 
 [node name="Mundo4" type="Node2D"]
 
@@ -131,10 +131,15 @@ layer_0/tile_data = PackedInt32Array(-2752504, 458752, 5, -2752503, 458752, 5, -
 position = Vector2(364, -700)
 
 [node name="npc" parent="." instance=ExtResource("5_k25su")]
-position = Vector2(53, -484)
+position = Vector2(563, -642)
 script = ExtResource("6_vtghh")
 
 [node name="Dialog" parent="npc" instance=ExtResource("7_aeeuo")]
+visible = false
+offset_left = 163.0
+offset_top = 103.0
+offset_right = 763.0
+offset_bottom = 703.0
 dialogues = Array[String](["Hola", "Cuanto es  3 x 7?"])
 
 [node name="LineEdit" type="LineEdit" parent="npc/Dialog"]
@@ -173,7 +178,7 @@ volume_db = -2.667
 position = Vector2(72, 688)
 
 [node name="Sprite2D" type="Sprite2D" parent="npc/npcStoper"]
-position = Vector2(287, -535)
+position = Vector2(351, -411)
 scale = Vector2(1.01935, 0.996367)
 texture = ExtResource("8_kasey")
 
@@ -181,7 +186,247 @@ texture = ExtResource("8_kasey")
 position = Vector2(16, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="npc/npcStoper/StaticBody2D"]
-position = Vector2(271, -535)
+position = Vector2(334, -412)
+shape = SubResource("RectangleShape2D_1rj5a")
+
+[node name="npc2" parent="." instance=ExtResource("5_k25su")]
+position = Vector2(344, 140)
+script = ExtResource("6_vtghh")
+
+[node name="Dialog" parent="npc2" instance=ExtResource("7_aeeuo")]
+visible = false
+offset_left = 134.0
+offset_top = 56.0
+offset_right = 734.0
+offset_bottom = 656.0
+dialogues = Array[String](["Hola", "Cuanto es  8 x 7?"])
+
+[node name="LineEdit" type="LineEdit" parent="npc2/Dialog"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 317.0
+offset_right = 165.0
+offset_bottom = 348.0
+theme_override_colors/font_placeholder_color = Color(0.109804, 0, 0.568627, 1)
+
+[node name="Label2" type="Label" parent="npc2/Dialog"]
+layout_mode = 0
+offset_left = 225.0
+offset_top = 317.0
+offset_right = 354.0
+offset_bottom = 348.0
+theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.819608, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.819608, 0, 0, 1)
+
+[node name="Button" type="Button" parent="npc2/Dialog"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.013
+anchor_bottom = 0.007
+offset_left = 168.0
+offset_top = 316.0
+offset_right = 213.2
+offset_bottom = 343.8
+text = "Check"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="npc2"]
+volume_db = -2.667
+
+[node name="npcStoper" type="Node2D" parent="npc2"]
+position = Vector2(72, 688)
+
+[node name="Sprite2D" type="Sprite2D" parent="npc2/npcStoper"]
+position = Vector2(356, -498)
+scale = Vector2(1.01935, 0.996367)
+texture = ExtResource("8_kasey")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="npc2/npcStoper"]
+position = Vector2(16, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="npc2/npcStoper/StaticBody2D"]
+position = Vector2(338, -498)
+shape = SubResource("RectangleShape2D_1rj5a")
+
+[node name="npc3" parent="." instance=ExtResource("5_k25su")]
+position = Vector2(55, -484)
+script = ExtResource("6_vtghh")
+
+[node name="Dialog" parent="npc3" instance=ExtResource("7_aeeuo")]
+visible = false
+offset_left = 65.0
+offset_top = 33.0
+offset_right = 665.0
+offset_bottom = 633.0
+dialogues = Array[String](["Hola", "Cuanto es  6 x 9?"])
+
+[node name="LineEdit" type="LineEdit" parent="npc3/Dialog"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 317.0
+offset_right = 165.0
+offset_bottom = 348.0
+theme_override_colors/font_placeholder_color = Color(0.109804, 0, 0.568627, 1)
+
+[node name="Label2" type="Label" parent="npc3/Dialog"]
+layout_mode = 0
+offset_left = 225.0
+offset_top = 317.0
+offset_right = 354.0
+offset_bottom = 348.0
+theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.819608, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.819608, 0, 0, 1)
+
+[node name="Button" type="Button" parent="npc3/Dialog"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.013
+anchor_bottom = 0.007
+offset_left = 168.0
+offset_top = 316.0
+offset_right = 213.2
+offset_bottom = 343.8
+text = "Check"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="npc3"]
+volume_db = -2.667
+
+[node name="npcStoper" type="Node2D" parent="npc3"]
+position = Vector2(72, 688)
+
+[node name="Sprite2D" type="Sprite2D" parent="npc3/npcStoper"]
+position = Vector2(282, -531)
+scale = Vector2(1.01935, 0.996367)
+texture = ExtResource("8_kasey")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="npc3/npcStoper"]
+position = Vector2(16, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="npc3/npcStoper/StaticBody2D"]
+position = Vector2(266, -531)
+shape = SubResource("RectangleShape2D_1rj5a")
+
+[node name="npc4" parent="." instance=ExtResource("5_k25su")]
+position = Vector2(1170, -564)
+script = ExtResource("6_vtghh")
+
+[node name="Dialog" parent="npc4" instance=ExtResource("7_aeeuo")]
+visible = false
+offset_left = 92.0
+offset_top = 43.0
+offset_right = 692.0
+offset_bottom = 643.0
+dialogues = Array[String](["Hola", "Cuanto es  6 x 7?"])
+
+[node name="LineEdit" type="LineEdit" parent="npc4/Dialog"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 317.0
+offset_right = 165.0
+offset_bottom = 348.0
+theme_override_colors/font_placeholder_color = Color(0.109804, 0, 0.568627, 1)
+
+[node name="Label2" type="Label" parent="npc4/Dialog"]
+layout_mode = 0
+offset_left = 225.0
+offset_top = 317.0
+offset_right = 354.0
+offset_bottom = 348.0
+theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.819608, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.819608, 0, 0, 1)
+
+[node name="Button" type="Button" parent="npc4/Dialog"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.013
+anchor_bottom = 0.007
+offset_left = 168.0
+offset_top = 316.0
+offset_right = 213.2
+offset_bottom = 343.8
+text = "Check"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="npc4"]
+volume_db = -2.667
+
+[node name="npcStoper" type="Node2D" parent="npc4"]
+position = Vector2(72, 688)
+
+[node name="Sprite2D" type="Sprite2D" parent="npc4/npcStoper"]
+position = Vector2(399, -449)
+scale = Vector2(1.01935, 0.996367)
+texture = ExtResource("8_kasey")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="npc4/npcStoper"]
+position = Vector2(16, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="npc4/npcStoper/StaticBody2D"]
+position = Vector2(379, -450)
+shape = SubResource("RectangleShape2D_1rj5a")
+
+[node name="npc5" parent="." instance=ExtResource("5_k25su")]
+position = Vector2(865, 221)
+script = ExtResource("6_vtghh")
+
+[node name="Dialog" parent="npc5" instance=ExtResource("7_aeeuo")]
+visible = false
+offset_left = 83.0
+offset_top = 43.0
+offset_right = 683.0
+offset_bottom = 643.0
+dialogues = Array[String](["Hola", "Cuanto es  5 x 9?"])
+
+[node name="LineEdit" type="LineEdit" parent="npc5/Dialog"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 317.0
+offset_right = 165.0
+offset_bottom = 348.0
+theme_override_colors/font_placeholder_color = Color(0.109804, 0, 0.568627, 1)
+
+[node name="Label2" type="Label" parent="npc5/Dialog"]
+layout_mode = 0
+offset_left = 225.0
+offset_top = 317.0
+offset_right = 354.0
+offset_bottom = 348.0
+theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.819608, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.819608, 0, 0, 1)
+
+[node name="Button" type="Button" parent="npc5/Dialog"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.013
+anchor_bottom = 0.007
+offset_left = 168.0
+offset_top = 316.0
+offset_right = 213.2
+offset_bottom = 343.8
+text = "Check"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="npc5"]
+volume_db = -2.667
+
+[node name="npcStoper" type="Node2D" parent="npc5"]
+position = Vector2(72, 688)
+
+[node name="Sprite2D" type="Sprite2D" parent="npc5/npcStoper"]
+position = Vector2(239, -447)
+scale = Vector2(1.01935, 0.996367)
+texture = ExtResource("8_kasey")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="npc5/npcStoper"]
+position = Vector2(16, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="npc5/npcStoper/StaticBody2D"]
+position = Vector2(225, -448)
 shape = SubResource("RectangleShape2D_1rj5a")
 
 [connection signal="pressed" from="npc/Dialog/Button" to="npc" method="_on_button_pressed" binds= ["21"]]
+[connection signal="pressed" from="npc2/Dialog/Button" to="npc2" method="_on_button_pressed" binds= ["56"]]
+[connection signal="pressed" from="npc3/Dialog/Button" to="npc3" method="_on_button_pressed" binds= ["54"]]
+[connection signal="pressed" from="npc4/Dialog/Button" to="npc4" method="_on_button_pressed" binds= ["42"]]
+[connection signal="pressed" from="npc5/Dialog/Button" to="npc5" method="_on_button_pressed" binds= ["45"]]
