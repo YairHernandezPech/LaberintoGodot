@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b7tqhsifdgfc7"]
+[gd_scene load_steps=23 format=3 uid="uid://b7tqhsifdgfc7"]
 
 [ext_resource type="PackedScene" uid="uid://df7vn437m54hd" path="res://Lib/Life.tscn" id="1_a860v"]
 [ext_resource type="Texture2D" uid="uid://c4vt4y4junesf" path="res://Assest/wallpaper-8257343_640.png" id="1_wdw21"]
@@ -9,14 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://j26wf7f0e22p" path="res://Lib/pause.tscn" id="3_wl1j3"]
 [ext_resource type="PackedScene" uid="uid://bn0v5nol6sgvr" path="res://Lib/npc.tscn" id="7_777af"]
 [ext_resource type="PackedScene" uid="uid://c5jjwo5jrc56d" path="res://Lib/dialog.tscn" id="8_1oyf0"]
-[ext_resource type="Script" path="res://Lib/mundo2/npc_level_2.gd" id="8_rpyaj"]
 [ext_resource type="Script" path="res://Lib/npc_2.gd" id="11_3mcxl"]
 [ext_resource type="Texture2D" uid="uid://d3oy6rrihcmvy" path="res://Assest/obstaculo.png" id="12_dg4is"]
 [ext_resource type="AudioStream" uid="uid://d2cy1phlaod3a" path="res://Assest/level-3/siu.mp3" id="15_70y7n"]
 [ext_resource type="PackedScene" uid="uid://cl4mbfaxa7fwx" path="res://Lib/portal.tscn" id="16_6c76f"]
 [ext_resource type="Script" path="res://Lib/mundo2/portal_2_.gd" id="17_cvqei"]
+[ext_resource type="AudioStream" uid="uid://536foe043f8" path="res://Assest/level-3/Green.mp3" id="18_fxiop"]
 [ext_resource type="PackedScene" uid="uid://dl30wst27byey" path="res://Lib/monster.tscn" id="23_jbppk"]
-[ext_resource type="Script" path="res://Lib/mundo2/monster_level_2.gd" id="24_iwkdb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8qj2r"]
 texture = ExtResource("1_xud2y")
@@ -592,6 +591,101 @@ navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_8qj2r")
 sources/1 = SubResource("TileSetAtlasSource_74gs0")
 
+[sub_resource type="GDScript" id="GDScript_8whg3"]
+script/source = "extends CharacterBody2D
+
+@onready var move_timer := $Timer
+@onready var dialog_box: TextureRect = $Dialog 
+var is_moving = false
+var speed = 100
+
+func _ready():
+	move_timer.wait_time = 1
+	move_timer.start() 
+	add_to_group(\"npc\")#esto es para crear un grupo
+	_on_Timer_timeout();
+	 
+func _on_Timer_timeout():
+	is_moving = true
+	$AnimatedSprite2D.play(\"npc\")
+	
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group(\"player\"):
+		dialog_box.visible = true
+		dialog_box.dialogue_index = 0
+		dialog_box.update_dialogue() 
+		print(\"tocando al npc del nivel 2\")
+		$AudioStreamPlayer2D.play()#Si queremos usar audio
+	pass
+	
+"
+
+[sub_resource type="GDScript" id="GDScript_wxk65"]
+script/source = "extends CharacterBody2D
+
+@export var speed: float = 400.0  # Velocidad de persecución
+
+@export var point_a: Vector2  # Punto A
+@export var point_b: Vector2  # Punto B
+
+var moving_to_b := true  # Para controlar si se mueve hacia el punto B o hacia el punto A
+
+var player_detected := false
+var player: CharacterBody2D = null  # Referencia al jugador
+
+func _ready() -> void:
+	add_to_group(\"monster\")
+	$AnimatedSprite2D.play(\"walk\")
+	global_position = point_a  # Asegurarse de que el fantasma empiece en el punto A
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group(\"player\"):
+		player = body
+		player_detected = true
+	pass # Replace with function body.
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	if body == player:
+		player_detected = false
+		player = null
+	pass # Replace with function body.
+
+func _on_collision_area_body_entered(body: Node2D) -> void:
+	if body.is_in_group(\"player\"):
+		player_detected = false
+		velocity = Vector2.ZERO
+		print(\"Tocando al player desde el collision\")
+		move_and_slide()
+		_on_death_animation_finished()
+	pass # Replace with function body.
+
+func _process(delta: float) -> void:
+	# Determina la dirección del movimiento
+	var target = point_b if moving_to_b else point_a
+	var direction = (target - global_position).normalized()
+
+	# Mueve al fantasma hacia el objetivo
+	velocity = direction * speed
+	move_and_slide()
+
+	# Si el fantasma ha llegado al objetivo, cambia de dirección
+	if global_position.distance_to(target) < 5.0:  # Umbral para \"llegar\"
+		moving_to_b = not moving_to_b  # Cambiar dirección al otro punto
+		
+		# Invertir la dirección de la cara
+		$AnimatedSprite2D.flip_h = moving_to_b  # Si se mueve hacia B, el sprite no se voltea (flip_h = false)
+												# Si se mueve hacia A, el sprite se voltea (flip_h = true)
+
+func _on_death_animation_finished():
+	if is_inside_tree():
+		Global.death_count -= 1
+		if Global.death_count == 0:
+			Global.death_count = 3
+			get_tree().change_scene_to_file(\"res://Lib/menu.tscn\")
+		else:
+			get_tree().reload_current_scene()
+"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5rg4s"]
 size = Vector2(44, 43.3281)
 
@@ -617,9 +711,14 @@ layer_0/tile_data = PackedInt32Array(720913, 1114112, 4, 786449, 1114112, 5, 851
 [node name="Player1" parent="." instance=ExtResource("2_3fddr")]
 position = Vector2(1847, 908)
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player1"]
+stream = ExtResource("18_fxiop")
+volume_db = 2.0
+autoplay = true
+
 [node name="npc" parent="." instance=ExtResource("7_777af")]
 position = Vector2(103, 899)
-script = ExtResource("8_rpyaj")
+script = SubResource("GDScript_8whg3")
 
 [node name="Dialog" parent="npc" instance=ExtResource("8_1oyf0")]
 visible = false
@@ -632,7 +731,10 @@ volume_db = 8.005
 [node name="monster" parent="." instance=ExtResource("23_jbppk")]
 position = Vector2(2122, 854)
 rotation = 0.0685201
-script = ExtResource("24_iwkdb")
+script = SubResource("GDScript_wxk65")
+speed = 400.0
+point_a = Vector2(0, 0)
+point_b = Vector2(0, 0)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="monster"]
 
@@ -641,7 +743,10 @@ script = ExtResource("24_iwkdb")
 [node name="monster2" parent="." instance=ExtResource("23_jbppk")]
 position = Vector2(1104, 665)
 rotation = 0.0685201
-script = ExtResource("24_iwkdb")
+script = SubResource("GDScript_wxk65")
+speed = 400.0
+point_a = Vector2(0, 0)
+point_b = Vector2(0, 0)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="monster2"]
 
@@ -650,7 +755,10 @@ script = ExtResource("24_iwkdb")
 [node name="monster3" parent="." instance=ExtResource("23_jbppk")]
 position = Vector2(2080, 419)
 rotation = 0.0685201
-script = ExtResource("24_iwkdb")
+script = SubResource("GDScript_wxk65")
+speed = 400.0
+point_a = Vector2(0, 0)
+point_b = Vector2(0, 0)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="monster3"]
 
@@ -659,7 +767,10 @@ script = ExtResource("24_iwkdb")
 [node name="monster5" parent="." instance=ExtResource("23_jbppk")]
 position = Vector2(1358, 57)
 rotation = 0.0685201
-script = ExtResource("24_iwkdb")
+script = SubResource("GDScript_wxk65")
+speed = 400.0
+point_a = Vector2(0, 0)
+point_b = Vector2(0, 0)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="monster5"]
 
@@ -668,7 +779,10 @@ script = ExtResource("24_iwkdb")
 [node name="monster4" parent="." instance=ExtResource("23_jbppk")]
 position = Vector2(733, 93)
 rotation = 0.0685201
-script = ExtResource("24_iwkdb")
+script = SubResource("GDScript_wxk65")
+speed = 400.0
+point_a = Vector2(0, 0)
+point_b = Vector2(0, 0)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="monster4"]
 

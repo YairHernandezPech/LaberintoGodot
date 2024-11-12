@@ -1,52 +1,62 @@
 extends CharacterBody2D
 
-@export var speed: float = 210.0  # Velocidad de persecución
+@export var speed: float = 400.0  # Velocidad de persecución
 
-var player_detected: bool = false
+@export var point_a: Vector2  # Punto A
+@export var point_b: Vector2  # Punto B
+
+var moving_to_b := true  # Para controlar si se mueve hacia el punto B o hacia el punto A
+
+var player_detected := false
 var player: CharacterBody2D = null  # Referencia al jugador
-
-# Referencias a nodos
-@onready var animated_sprite = $AnimatedSprite2D
 
 func _ready() -> void:
 	add_to_group("monster")
-	animated_sprite.play("walk")
+	$AnimatedSprite2D.play("walk")
+	global_position = point_a  # Asegurarse de que el fantasma empiece en el punto A
 
-# Detección de entrada del jugador en el área de detección
-func _on_area_2d_body_entered(body: Node) -> void:
+func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		player = body as CharacterBody2D
+		player = body
 		player_detected = true
-		print("Jugador detectado")
+	pass # Replace with function body.
 
-# Detección de salida del jugador del área de detección
-func _on_area_2d_body_exited(body: Node) -> void:
+func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body == player:
 		player_detected = false
 		player = null
-		print("Jugador fuera del área de detección")
+	pass # Replace with function body.
 
-# Detección de colisión con el jugador
-func _on_collision_area_body_entered(body: Node) -> void:
+func _on_collision_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		player_detected = false
 		velocity = Vector2.ZERO
-		print("Tocando al jugador")
-		animated_sprite.play("death")  # Cambia a animación de muerte
+		print("Tocando al player desde el collision")
+		move_and_slide()
 		_on_death_animation_finished()
+	pass # Replace with function body.
 
-# Lógica de persecución en _physics_process
-func _physics_process(delta: float) -> void:
-	if player_detected and player:
-		var direction = (player.global_position - global_position).normalized()
-		velocity = direction * speed
-	move_and_slide()  # Mueve al fantasma utilizando la velocidad actualizada
+func _process(delta: float) -> void:
+	# Determina la dirección del movimiento
+	var target = point_b if moving_to_b else point_a
+	var direction = (target - global_position).normalized()
 
-# Lógica para finalizar animación de muerte y recargar la escena
+	# Mueve al fantasma hacia el objetivo
+	velocity = direction * speed
+	move_and_slide()
+
+	# Si el fantasma ha llegado al objetivo, cambia de dirección
+	if global_position.distance_to(target) < 5.0:  # Umbral para "llegar"
+		moving_to_b = not moving_to_b  # Cambiar dirección al otro punto
+		
+		# Invertir la dirección de la cara
+		$AnimatedSprite2D.flip_h = moving_to_b  # Si se mueve hacia B, el sprite no se voltea (flip_h = false)
+												# Si se mueve hacia A, el sprite se voltea (flip_h = true)
+
 func _on_death_animation_finished():
 	if is_inside_tree():
 		Global.death_count -= 1
-		if Global.death_count <= 0:
+		if Global.death_count == 0:
 			Global.death_count = 3
 			get_tree().change_scene_to_file("res://Lib/menu.tscn")
 		else:
