@@ -14,8 +14,8 @@
 [ext_resource type="Script" path="res://Lib/level-3/npc-yisus.gd" id="13_5d7nd"]
 [ext_resource type="AudioStream" uid="uid://c4vshgg6iyd05" path="res://Assest/level-3/win.mp3" id="14_k15wd"]
 [ext_resource type="AudioStream" uid="uid://536foe043f8" path="res://Assest/level-3/Green.mp3" id="15_td34w"]
-[ext_resource type="PackedScene" uid="uid://dl30wst27byey" path="res://Lib/monster.tscn" id="22_fncje"]
-[ext_resource type="PackedScene" uid="uid://cl4mbfaxa7fwx" path="res://Lib/portal.tscn" id="23_xcdge"]
+[ext_resource type="PackedScene" path="res://Lib/monster.tscn" id="22_fncje"]
+[ext_resource type="PackedScene" path="res://Lib/portal.tscn" id="23_xcdge"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8p5fm"]
 texture = ExtResource("1_h2dg2")

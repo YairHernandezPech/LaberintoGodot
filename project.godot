@@ -19,10 +19,6 @@ config/icon="res://icon.svg"
 
 Global="*res://Lib/Global.gd"
 
-[dotnet]
-
-project/assembly_name="Laberinto"
-
 [input]
 
 number_0={
