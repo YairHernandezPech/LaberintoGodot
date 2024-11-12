@@ -11,8 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://dyaxcf6gvshik" path="res://Lib/player_1.tscn" id="9_i8hrx"]
 [ext_resource type="PackedScene" uid="uid://bn0v5nol6sgvr" path="res://Lib/npc.tscn" id="10_4683q"]
 [ext_resource type="PackedScene" uid="uid://c5jjwo5jrc56d" path="res://Lib/dialog.tscn" id="11_b88ah"]
-[ext_resource type="PackedScene" path="res://Lib/key.tscn" id="15_775jw"]
-[ext_resource type="PackedScene" path="res://Lib/arbol.tscn" id="16_hpx16"]
+[ext_resource type="PackedScene" uid="uid://by5yopniibrjb" path="res://Lib/key.tscn" id="15_775jw"]
+[ext_resource type="PackedScene" uid="uid://cofuctikcw75v" path="res://Lib/arbol.tscn" id="16_hpx16"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wouph"]
 texture = ExtResource("3_gy7gb")

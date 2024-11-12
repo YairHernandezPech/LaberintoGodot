@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cl4mbfaxa7fwx"]
+[gd_scene load_steps=13 format=3 uid="uid://c6v4qrijm1p45"]
 
 [ext_resource type="Script" path="res://Lib/portal.gd" id="1_cb32u"]
 [ext_resource type="Texture2D" uid="uid://cr0u1a41yypyf" path="res://Assest/Green Portal Sprite Sheet.png" id="1_jec4v"]
