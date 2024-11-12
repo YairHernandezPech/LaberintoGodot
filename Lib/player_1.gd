@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const speed = 250
+const speed = 120
 var current_state = IDLE
 var is_roaming = true
 var dir = Vector2.RIGHT
@@ -13,7 +13,7 @@ enum {
 	NEW_DIR
 }
 
-func _process(_delta):
+func _process(delta):
 	if Input.is_action_pressed("ui_left"):
 		dir = Vector2.LEFT
 		current_state = NEW_DIR
@@ -29,7 +29,7 @@ func _process(_delta):
 	else:
 		current_state = IDLE
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	match current_state:
 		IDLE:
 			$AnimatedSprite2D.play("idle")
@@ -47,4 +47,3 @@ func _physics_process(_delta):
 					$AnimatedSprite2D.play("idle")
 
 	move_and_slide()
-	
