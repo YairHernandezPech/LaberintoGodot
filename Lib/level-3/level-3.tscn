@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://7g8lfx3w4xeo"]
+[gd_scene load_steps=30 format=3 uid="uid://7g8lfx3w4xeo"]
 
 [ext_resource type="Texture2D" uid="uid://dm5idhok3sh8u" path="res://Assest/Terrain/terrian2.png" id="1_k45jf"]
 [ext_resource type="Texture2D" uid="uid://cbmb5cipyhb2u" path="res://Assest/Terrain/Terrain (16x16).png" id="2_jpiha"]
@@ -20,6 +20,7 @@
 [ext_resource type="AudioStream" uid="uid://c4vshgg6iyd05" path="res://Assest/level-3/win.mp3" id="17_6vmrt"]
 [ext_resource type="PackedScene" uid="uid://cl4mbfaxa7fwx" path="res://Lib/portal.tscn" id="18_dd6lq"]
 [ext_resource type="Texture2D" uid="uid://c8l1h53ymwdv3" path="res://Assest/level-3/Sprites/11-Door/Idle.png" id="20_rvjkb"]
+[ext_resource type="Script" path="res://Lib/level-3/portal3.gd" id="20_thhy1"]
 [ext_resource type="AudioStream" uid="uid://536foe043f8" path="res://Assest/level-3/Green.mp3" id="21_byhdu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8p5fm"]
@@ -1903,6 +1904,7 @@ volume_db = 19.26
 
 [node name="Portal" parent="." instance=ExtResource("18_dd6lq")]
 position = Vector2(855, 3)
+script = ExtResource("20_thhy1")
 
 [node name="Idle" type="Sprite2D" parent="."]
 position = Vector2(25, 128)
