@@ -10,9 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://bn0v5nol6sgvr" path="res://Lib/npc.tscn" id="7_777af"]
 [ext_resource type="PackedScene" uid="uid://c5jjwo5jrc56d" path="res://Lib/dialog.tscn" id="8_1oyf0"]
 [ext_resource type="Script" path="res://Lib/mundo2/npc_level_2.gd" id="8_rpyaj"]
-[ext_resource type="AudioStream" uid="uid://drmv1hsbll4o3" path="res://Assest/Grabación2.mp3" id="11_1rvap"]
 [ext_resource type="Script" path="res://Lib/npc_2.gd" id="11_3mcxl"]
 [ext_resource type="Texture2D" uid="uid://d3oy6rrihcmvy" path="res://Assest/obstaculo.png" id="12_dg4is"]
+[ext_resource type="AudioStream" uid="uid://d2cy1phlaod3a" path="res://Assest/level-3/siu.mp3" id="15_70y7n"]
 [ext_resource type="PackedScene" uid="uid://cl4mbfaxa7fwx" path="res://Lib/portal.tscn" id="16_6c76f"]
 [ext_resource type="Script" path="res://Lib/mundo2/portal_2_.gd" id="17_cvqei"]
 [ext_resource type="PackedScene" uid="uid://dl30wst27byey" path="res://Lib/monster.tscn" id="23_jbppk"]
@@ -626,7 +626,8 @@ visible = false
 dialogues = Array[String](["Hola jugador, bienvenido al segundo nivel", "prepara tu mente ya que cada vez se va poniendo", "cada vez mas difici, Es hora de poner a prueba tu", "Inteligencia matematica", "Buena suerte...!!!"])
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="npc"]
-volume_db = -2.667
+stream = ExtResource("15_70y7n")
+volume_db = 8.005
 
 [node name="monster" parent="." instance=ExtResource("23_jbppk")]
 position = Vector2(2122, 854)
@@ -714,8 +715,8 @@ offset_bottom = 343.8
 text = "Check"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="npc6"]
-stream = ExtResource("11_1rvap")
-volume_db = -2.667
+stream = ExtResource("15_70y7n")
+volume_db = 8.005
 
 [node name="npcStoper" type="Node2D" parent="npc6"]
 position = Vector2(282, 761)
@@ -774,8 +775,8 @@ offset_bottom = 343.8
 text = "Check"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="npc7"]
-stream = ExtResource("11_1rvap")
-volume_db = -2.667
+stream = ExtResource("15_70y7n")
+volume_db = 8.005
 
 [node name="npcStoper" type="Node2D" parent="npc7"]
 position = Vector2(244, 766)
@@ -834,8 +835,8 @@ offset_bottom = 343.8
 text = "Check"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="npc8"]
-stream = ExtResource("11_1rvap")
-volume_db = -2.667
+stream = ExtResource("15_70y7n")
+volume_db = 8.005
 
 [node name="npcStoper" type="Node2D" parent="npc8"]
 position = Vector2(258, 471)
@@ -894,8 +895,8 @@ offset_bottom = 343.8
 text = "Check"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="npc9"]
-stream = ExtResource("11_1rvap")
-volume_db = -2.667
+stream = ExtResource("15_70y7n")
+volume_db = 8.005
 
 [node name="npcStoper" type="Node2D" parent="npc9"]
 position = Vector2(181, 690)
@@ -954,8 +955,8 @@ offset_bottom = 343.8
 text = "Check"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="npc10"]
-stream = ExtResource("11_1rvap")
-volume_db = -2.667
+stream = ExtResource("15_70y7n")
+volume_db = 8.005
 
 [node name="npcStoper" type="Node2D" parent="npc10"]
 position = Vector2(167, 592)
