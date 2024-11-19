@@ -96,7 +96,7 @@ script = ExtResource("1_wd3r8")
 position = Vector2(328, 192)
 sprite_frames = SubResource("SpriteFrames_spvl2")
 animation = &"walk"
-frame_progress = 0.20395
+frame_progress = 0.341529
 
 [node name="Area2D" type="Area2D" parent="."]
 

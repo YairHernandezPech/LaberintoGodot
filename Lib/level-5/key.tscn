@@ -1,7 +1,7 @@
 [gd_scene load_steps=30 format=3 uid="uid://by5yopniibrjb"]
 
 [ext_resource type="Texture2D" uid="uid://crk5rph1r3mj5" path="res://Assest/fondo/free_rotating_key_frakassets/free_rotating_key_frakassets/key_32x32_24f.png" id="1_anw23"]
-[ext_resource type="Script" path="res://Lib/key.gd" id="1_sj8od"]
+[ext_resource type="Script" path="res://Lib/level-5/key.gd" id="1_sj8od"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8r31w"]
 atlas = ExtResource("1_anw23")

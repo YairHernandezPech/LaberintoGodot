@@ -13,7 +13,7 @@ func time_left_to_live():
 	Global.second = int(time_left) % 60
 	return [Global.minute, Global.second]
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	label.text = "%02d:%02d" % time_left_to_live()
 
 func _on_timer_timeout():

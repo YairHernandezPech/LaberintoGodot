@@ -31,5 +31,10 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 
 func _on_area_2d_2_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		print("tocando al item")
+		var i_key = get_tree().get_nodes_in_group("i-key")
+		if i_key.size() > 0:
+			i_key[0].incrementar_contador()
 	queue_free()  # Hace que la llave desaparezca
 	pass # Replace with function body.
