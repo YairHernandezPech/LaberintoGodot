@@ -1437,42 +1437,42 @@ animations = [{
 [node name="Timer" type="Timer" parent="."]
 
 [node name="AnimatedSprite2Ds" type="AnimatedSprite2D" parent="."]
-position = Vector2(100.5, 552.5)
-scale = Vector2(0.101202, 0.103206)
+position = Vector2(111.5, 542.5)
+scale = Vector2(0.119238, 0.129259)
 sprite_frames = SubResource("SpriteFrames_ghyd5")
 animation = &"idle"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(98.4843, 553.508)
-scale = Vector2(1.65625, 1.62917)
+position = Vector2(108.242, 543.821)
+scale = Vector2(1.96118, 1.9319)
 sprite_frames = SubResource("SpriteFrames_osunk")
 animation = &"idle"
 frame_progress = 0.696887
 
 [node name="Panel2" type="Panel" parent="."]
 offset_left = 54.0
-offset_top = 571.0
+offset_top = 567.0
 offset_right = 103.0
-offset_bottom = 593.0
+offset_bottom = 589.0
 
 [node name="num" type="Label" parent="."]
 offset_left = 55.0
-offset_top = 569.0
+offset_top = 565.0
 offset_right = 114.0
-offset_bottom = 601.0
+offset_bottom = 597.0
 theme_override_font_sizes/font_size = 18
 text = "00:00"
 
 [node name="Panel" type="Panel" parent="."]
-offset_left = 109.0
-offset_top = 521.0
-offset_right = 128.0
-offset_bottom = 543.0
+offset_left = 122.0
+offset_top = 499.0
+offset_right = 141.0
+offset_bottom = 521.0
 
 [node name="Label" type="Label" parent="."]
-offset_left = 112.0
-offset_top = 516.0
-offset_right = 128.0
-offset_bottom = 548.0
+offset_left = 125.0
+offset_top = 494.0
+offset_right = 141.0
+offset_bottom = 526.0
 theme_override_font_sizes/font_size = 23
 text = "0"

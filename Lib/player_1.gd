@@ -6,7 +6,7 @@ var current_state = IDLE
 var dir = Vector2.RIGHT
 
 @onready var speed_timer := $Timer
-var countdown_time = 10 
+var countdown_time = 15
 
 var num_label
 var num_panel

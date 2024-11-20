@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://xbp5nfygk2sk" path="res://Assest/lvl-5/Sun Being Collected Sample _ Plants vs Zombies Sound Effect(MP3_160K).mp3" id="3_qske8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kdroj"]
-radius = 201.637
+radius = 134.605
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wxmyq"]
 atlas = ExtResource("2_b1q8o")
@@ -394,7 +394,10 @@ animations = [{
 }]
 
 [node name="zapato" type="CharacterBody2D"]
+position = Vector2(3, 0)
+scale = Vector2(0.987862, 1)
 script = ExtResource("1_42ttq")
+metadata/_edit_group_ = true
 
 [node name="Timer" type="Timer" parent="."]
 
@@ -403,12 +406,14 @@ position = Vector2(140, 505.25)
 scale = Vector2(0.104208, 0.108717)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-28.7885, 0)
+position = Vector2(97.4948, -55.188)
+scale = Vector2(0.841851, 0.85951)
 shape = SubResource("CircleShape2D_kdroj")
+metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(140, 505.25)
-scale = Vector2(0.104208, 0.108717)
+position = Vector2(151.67, 499)
+scale = Vector2(0.0591769, 0.0621242)
 sprite_frames = SubResource("SpriteFrames_joulc")
 animation = &"idle"
 frame_progress = 0.684715

@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3idr18yk70jk"
-valid=false
+uid="uid://cr6tslrkhxweu"
+path="res://.godot/imported/Attack.png-7f7798be449b4fc96c0ce70a6825c980.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://Assest/lvl-5/circulo.png"
+source_file="res://Assest/lvl-5/dog/Attack.png"
+dest_files=["res://.godot/imported/Attack.png-7f7798be449b4fc96c0ce70a6825c980.ctex"]
 
 [params]
 

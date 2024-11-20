@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3idr18yk70jk"
-valid=false
+uid="uid://cueswctbbbl06"
+path="res://.godot/imported/Idle.png-50da48e8fc5f901b289ea02732d9646a.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://Assest/lvl-5/circulo.png"
+source_file="res://Assest/lvl-5/dog/Idle.png"
+dest_files=["res://.godot/imported/Idle.png-50da48e8fc5f901b289ea02732d9646a.ctex"]
 
 [params]
 

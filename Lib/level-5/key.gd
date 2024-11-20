@@ -20,6 +20,7 @@ func _on_Timer_timeout():
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
+		print("tocando puerta")
 		dialog_box.visible = true
 		dialog_box.dialogue_index = 0
 		dialog_box.update_dialogue() 

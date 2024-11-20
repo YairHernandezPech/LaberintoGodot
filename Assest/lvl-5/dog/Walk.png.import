@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3idr18yk70jk"
-valid=false
+uid="uid://b4pyklxilc3o"
+path="res://.godot/imported/Walk.png-87b2819dd0b0a2f7055bf6edf1cc14e3.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://Assest/lvl-5/circulo.png"
+source_file="res://Assest/lvl-5/dog/Walk.png"
+dest_files=["res://.godot/imported/Walk.png-87b2819dd0b0a2f7055bf6edf1cc14e3.ctex"]
 
 [params]
 

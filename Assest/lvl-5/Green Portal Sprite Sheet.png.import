@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3idr18yk70jk"
-valid=false
+uid="uid://c8rgpg4dsy1l5"
+path="res://.godot/imported/Green Portal Sprite Sheet.png-bf360d5321196ca31e80546e458e71de.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://Assest/lvl-5/circulo.png"
+source_file="res://Assest/lvl-5/Green Portal Sprite Sheet.png"
+dest_files=["res://.godot/imported/Green Portal Sprite Sheet.png-bf360d5321196ca31e80546e458e71de.ctex"]
 
 [params]
 

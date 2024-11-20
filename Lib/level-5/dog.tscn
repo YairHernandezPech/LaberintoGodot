@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://deqyruvog5htc"]
+
+[ext_resource type="Texture2D" uid="uid://cueswctbbbl06" path="res://Assest/lvl-5/dog/Idle.png" id="1_0lijh"]
+[ext_resource type="Script" path="res://Lib/level-5/dog.gd" id="1_s7nuu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qs1mv"]
+atlas = ExtResource("1_0lijh")
+region = Rect2(0, 0, 384, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0n3x8"]
+atlas = ExtResource("1_0lijh")
+region = Rect2(384, 0, 384, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgwlq"]
+atlas = ExtResource("1_0lijh")
+region = Rect2(768, 0, 384, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xw6q"]
+atlas = ExtResource("1_0lijh")
+region = Rect2(1152, 0, 384, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lerv7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qs1mv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0n3x8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pgwlq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xw6q")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 9.0
+}]
+
+[node name="dog" type="CharacterBody2D"]
+script = ExtResource("1_s7nuu")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(16.5, 158)
+scale = Vector2(0.440104, 0.520833)
+sprite_frames = SubResource("SpriteFrames_lerv7")
+animation = &"idle"
+frame_progress = 0.0938707

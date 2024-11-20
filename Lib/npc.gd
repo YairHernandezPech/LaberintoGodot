@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @onready var move_timer := $Timer
-@onready var dialog_box: TextureRect = $Dialog 
+@onready var dialog_box: CanvasLayer = $Dialogcl
 var is_moving = false
 var speed = 100
 
@@ -24,3 +24,9 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		
 	pass
 	
+
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		dialog_box.visible = false
+	pass # Replace with function body.
