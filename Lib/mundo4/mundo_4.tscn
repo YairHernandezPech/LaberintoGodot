@@ -8,11 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://dyaxcf6gvshik" path="res://Lib/player_1.tscn" id="7_okfkp"]
 [ext_resource type="Script" path="res://Lib/audio.gd" id="8_2atxt"]
 [ext_resource type="Texture2D" uid="uid://d3oy6rrihcmvy" path="res://Assest/obstaculo.png" id="8_kasey"]
-[ext_resource type="PackedScene" uid="uid://djm6avupjcjge" path="res://Lib/ghost.tscn" id="9_ttrp2"]
+[ext_resource type="PackedScene" path="res://Lib/ghost.tscn" id="9_ttrp2"]
 [ext_resource type="PackedScene" uid="uid://x7jnwpnlvp7k" path="res://Lib/time.tscn" id="10_w5ok8"]
 [ext_resource type="PackedScene" uid="uid://j26wf7f0e22p" path="res://Lib/pause.tscn" id="11_ltmgh"]
 [ext_resource type="PackedScene" uid="uid://df7vn437m54hd" path="res://Lib/Life.tscn" id="12_bxu2l"]
-[ext_resource type="PackedScene" uid="uid://cl4mbfaxa7fwx" path="res://Lib/portal.tscn" id="13_h0y7a"]
+[ext_resource type="PackedScene" uid="uid://c6v4qrijm1p45" path="res://Lib/portal.tscn" id="13_h0y7a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3hfek"]
 texture = ExtResource("2_ifi3i")

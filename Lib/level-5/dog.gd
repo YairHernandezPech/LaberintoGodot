@@ -13,3 +13,11 @@ func _ready():
 func _on_Timer_timeout():
 	is_moving = true
 	$AnimatedSprite2D.play("idle")
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		print("Tocando el perro")
+		body.queue_free()
+		get_tree().change_scene_to_file("res://Lib/mundo4/mundo_4.tscn")
+	pass # Replace with function body.

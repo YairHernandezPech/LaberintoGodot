@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var dialog_box: CanvasLayer = $Dialogcl
 @onready var collision_dor := $CollisionShape2D
+@onready var area_coll := $Area2D/CollisionShape2D
 @onready var move_timer := $Timer
 
 var is_moving = false
@@ -40,5 +41,7 @@ func _input(event: InputEvent) -> void:
 			i_key[0].disminuir_contador()
 			collision_dor.disabled = true
 			$AnimatedSprite2D.play("open")
-			await get_tree().create_timer(0.5).timeout
-			queue_free()
+			$AudioStreamPlayer2D.playing = true
+			area_coll.disabled = true
+			#await get_tree().create_timer(1).timeout
+			#queue_free()

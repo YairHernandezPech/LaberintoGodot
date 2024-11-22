@@ -7,25 +7,14 @@ var dir = Vector2.RIGHT
 
 @onready var speed_timer := $Timer
 var countdown_time = 15
-
-var num_label
-var num_panel
+var remaining_time
 
 func _ready():
 	add_to_group("player")
-	var i_zapato = get_node("/root/Mundo5/i-zapato")
-	speed_timer.wait_time = countdown_time  # Establecer el tiempo de espera inicial
+	# Inicializa el temporizador con el valor de countdown_time
+	speed_timer.wait_time = countdown_time
 	speed_timer.connect("timeout", Callable(self, "_on_speed_timer_timeout"))
-	
-	num_label = i_zapato.get_node("num")
-	num_panel = i_zapato.get_node("Panel2") 
-
-	# Configurar la visibilidad del label y panel
-	if num_label and num_panel:
-		num_label.visible = false
-		num_panel.visible = false
-	else:
-		print("Error: No se encontraron los nodos 'num' o 'Panel2' en i-zapato.")
+	remaining_time = countdown_time  # Inicializamos el tiempo restante con el valor completo
 
 enum {
 	IDLE,
@@ -33,10 +22,14 @@ enum {
 }
 
 func _process(_delta):
-	# Actualizar el tiempo restante en el label
-	if not speed_timer.is_stopped():  # Verificar si el temporizador está activo
-		var remaining_time = speed_timer.time_left  # Obtener el tiempo restante en el temporizador
-		num_label.text = "00:%02d" % int(remaining_time)  # Mostrar el tiempo restante en el label
+	# Verificamos si el temporizador está en marcha y actualizamos el tiempo restante
+	if not speed_timer.is_stopped():
+		remaining_time = int(speed_timer.time_left)  # Actualizamos el tiempo restante
+
+	# Mostrar el contador con el tiempo restante
+	var i_zapato = get_tree().get_nodes_in_group("i-zapato")
+	if i_zapato.size() > 0:
+		i_zapato[0].timer_contador(remaining_time)
 
 	# Verificar el movimiento del jugador
 	if Input.is_action_pressed("ui_left"):
@@ -55,14 +48,14 @@ func _process(_delta):
 		current_state = IDLE
 
 	if Input.is_action_just_pressed("z"):
-		var i_zapato = get_tree().get_nodes_in_group("i-zapato")
 		if i_zapato.size() > 0 and i_zapato[0].contador > 0:
 			i_zapato[0].disminuir_contador()
+			# Llamar a mostrar_contador con el tiempo restante
+			i_zapato[0].timer_contador(remaining_time)
+			i_zapato[0].mostrar_contador()
 			current_speed = base_speed * 2
 			speed_timer.start()  # Iniciar el temporizador
-			if num_label and num_panel:
-				num_label.visible = true
-				num_panel.visible = true
+
 
 func _physics_process(_delta):
 	match current_state:
@@ -84,10 +77,7 @@ func _physics_process(_delta):
 	move_and_slide()
 
 func _on_speed_timer_timeout():
-	# Cuando el temporizador termine, restablecer la velocidad y ocultar el label
+	var i_zapato = get_tree().get_nodes_in_group("i-zapato")
 	current_speed = base_speed
-	if num_label and num_panel:
-		num_label.visible = false
-		num_panel.visible = false
-	else:
-		print("Error: num_label o num_panel no están inicializados.")
+	# Al finalizar el temporizador, ocultamos el contador
+	i_zapato[0].ocultar_contador()
