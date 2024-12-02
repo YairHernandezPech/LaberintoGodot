@@ -1,23 +1,35 @@
 extends CharacterBody2D
 
-# Velocidad de movimiento en el eje X
-var velocidad = 100
+# Velocidades de movimiento
+var velocidad_normal = 100
+var velocidad_rapida = 200
+var velocidad = velocidad_normal  # Velocidad inicial
+
 # Dirección de movimiento (1 = derecha, -1 = izquierda)
 var direccion = 1
-var player: CharacterBody2D = null  # Referencia al jugador
 
-# Referencia al AnimatedSprite2D
-var anim_sprite: AnimatedSprite2D
+var player: CharacterBody2D = null  # Referencia al jugador
+var anim_sprite: AnimatedSprite2D  # Referencia al AnimatedSprite2D
+var temporizador: Timer  # Temporizador para cambiar la velocidad
 
 func _ready():
-	# Referencia al AnimatedSprite2D
+	# Referencias a nodos
 	anim_sprite = $AnimatedSprite2D
 	player = $"../Player1"
 
+	# Crear el temporizador
+	temporizador = Timer.new()
+	temporizador.wait_time = 5  # 5 segundos
+	temporizador.one_shot = false  # Que se repita
+	temporizador.connect("timeout", Callable(self, "_on_temporizador_timeout"))  # Usar Callable para conectar la señal
+	add_child(temporizador)  # Asegúrate de añadir el temporizador al nodo actual
+	temporizador.start()  # Iniciar el temporizador
+
 func _process(delta):
 	# Mover el objeto en función de la dirección
-	velocity.x = velocidad * direccion
-	move_and_slide()
+	# Cambié velocity.x por velocity (usando Vector2)
+	velocity = Vector2(velocidad * direccion, velocity.y)
+	move_and_slide()  # Moverse con la nueva velocidad
 
 	# Actualizar la animación en función de la dirección
 	if direccion == 1:
@@ -28,13 +40,21 @@ func _process(delta):
 	# Verificar si hay una colisión y cambiar la dirección
 	if is_on_wall(): 
 		direccion *= -1
+
 	# Detectar colisión con el jugador
 	for i in range(get_slide_collision_count()):
 		var collision = get_slide_collision(i)
 		var collider = collision.get_collider()
 		if collider == player:
 			_on_death_animation_finished()
-		
+
+func _on_temporizador_timeout():
+	# Cambiar entre velocidad normal y rápida
+	if velocidad == velocidad_normal:
+		velocidad = velocidad_rapida
+	else:
+		velocidad = velocidad_normal
+
 func _on_death_animation_finished():
 	if is_inside_tree():
 		Global.death_count -= 1
