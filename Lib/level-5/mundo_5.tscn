@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://d0dox84vihwds"]
+[gd_scene load_steps=27 format=3 uid="uid://b7tdm8dao8v6w"]
 
 [ext_resource type="Texture2D" uid="uid://c2p088feifeii" path="res://Assest/fondo/ForestVegetation/ForestVegetation/forest_tiles_trees_shadows.png" id="1_51ekj"]
 [ext_resource type="Texture2D" uid="uid://co8ffevg8cx0r" path="res://Assest/fondo/ForestVegetation/ForestVegetation/forest_tiles_trees.png" id="2_g644x"]
@@ -6,23 +6,23 @@
 [ext_resource type="PackedScene" uid="uid://x7jnwpnlvp7k" path="res://Lib/time.tscn" id="3_fmmw7"]
 [ext_resource type="Texture2D" uid="uid://b2eroax027407" path="res://Assest/fondo/TileSet_V2.png" id="3_gy7gb"]
 [ext_resource type="Texture2D" uid="uid://d3oy6rrihcmvy" path="res://Assest/obstaculo.png" id="6_ms8if"]
-[ext_resource type="PackedScene" uid="uid://b57dajl13mn46" path="res://Lib/level-5/dialog_cl.tscn" id="8_fw0tj"]
+[ext_resource type="PackedScene" path="res://Lib/level-5/dialog_cl.tscn" id="8_fw0tj"]
 [ext_resource type="PackedScene" uid="uid://dyaxcf6gvshik" path="res://Lib/player_1.tscn" id="9_i8hrx"]
 [ext_resource type="PackedScene" uid="uid://bn0v5nol6sgvr" path="res://Lib/npc.tscn" id="10_4683q"]
 [ext_resource type="PackedScene" uid="uid://c5jjwo5jrc56d" path="res://Lib/dialog.tscn" id="11_b88ah"]
-[ext_resource type="PackedScene" uid="uid://by5yopniibrjb" path="res://Lib/level-5/key.tscn" id="15_775jw"]
-[ext_resource type="PackedScene" uid="uid://ha1h0r885mcu" path="res://Lib/level-5/door.tscn" id="15_jew1u"]
+[ext_resource type="PackedScene" path="res://Lib/level-5/key.tscn" id="15_775jw"]
+[ext_resource type="PackedScene" path="res://Lib/level-5/door.tscn" id="15_jew1u"]
 [ext_resource type="AudioStream" uid="uid://d2cy1phlaod3a" path="res://Assest/level-3/siu.mp3" id="16_2fgxg"]
 [ext_resource type="AudioStream" uid="uid://536foe043f8" path="res://Assest/level-3/Green.mp3" id="16_g4id5"]
-[ext_resource type="PackedScene" uid="uid://cofuctikcw75v" path="res://Lib/arbol.tscn" id="16_hpx16"]
+[ext_resource type="PackedScene" path="res://Lib/arbol.tscn" id="16_hpx16"]
 [ext_resource type="AudioStream" uid="uid://c4vshgg6iyd05" path="res://Assest/level-3/win.mp3" id="17_3gmqq"]
-[ext_resource type="PackedScene" uid="uid://b5lpfs8yripfb" path="res://Lib/level-5/ikey.tscn" id="19_smnmg"]
-[ext_resource type="PackedScene" uid="uid://cf45ky1xpby5" path="res://Lib/level-5/i_zapato.tscn" id="20_rfco8"]
+[ext_resource type="PackedScene" path="res://Lib/level-5/ikey.tscn" id="19_smnmg"]
+[ext_resource type="PackedScene" path="res://Lib/level-5/i_zapato.tscn" id="20_rfco8"]
 [ext_resource type="Script" path="res://Lib/level-5/i_zapato.gd" id="21_q7juy"]
-[ext_resource type="PackedScene" uid="uid://dvvpkpmaw33gi" path="res://Lib/level-5/zapato.tscn" id="22_w856j"]
-[ext_resource type="PackedScene" uid="uid://d1kjkdt3ba4j7" path="res://Lib/level-5/npclvl_5.tscn" id="24_3g4p6"]
-[ext_resource type="PackedScene" uid="uid://deqyruvog5htc" path="res://Lib/level-5/dog.tscn" id="24_wgj03"]
-[ext_resource type="PackedScene" uid="uid://bk6f67jbebdy6" path="res://Lib/level-5/collision_zapato.tscn" id="24_xrpu2"]
+[ext_resource type="PackedScene" path="res://Lib/level-5/zapato.tscn" id="22_w856j"]
+[ext_resource type="PackedScene" path="res://Lib/level-5/npclvl_5.tscn" id="24_3g4p6"]
+[ext_resource type="PackedScene" path="res://Lib/level-5/dog.tscn" id="24_wgj03"]
+[ext_resource type="PackedScene" path="res://Lib/level-5/collision_zapato.tscn" id="24_xrpu2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wouph"]
 texture = ExtResource("3_gy7gb")
@@ -336,6 +336,9 @@ position = Vector2(-133, -757)
 [node name="Dialogcl" parent="npc" instance=ExtResource("8_fw0tj")]
 visible = false
 dialogues = Array[String](["Hola, bienvenido al ultimo nivel.", "Es hora de poner a prueba lo aprendido.", "¡Haya la llave para poder salir!"])
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="npc"]
+stream = ExtResource("16_2fgxg")
 
 [node name="Key" parent="." instance=ExtResource("15_775jw")]
 position = Vector2(978, 301)

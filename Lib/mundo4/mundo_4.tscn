@@ -1,18 +1,21 @@
-[gd_scene load_steps=17 format=3 uid="uid://bdb8f1lhhiq36"]
+[gd_scene load_steps=20 format=3 uid="uid://bdb8f1lhhiq36"]
 
 [ext_resource type="Texture2D" uid="uid://bgcocgbfhrbsq" path="res://Assest/fondo/fondo4.2.jpg" id="1_8ax70"]
+[ext_resource type="AudioStream" uid="uid://536foe043f8" path="res://Assest/level-3/Green.mp3" id="1_ygklj"]
 [ext_resource type="Texture2D" uid="uid://cbmb5cipyhb2u" path="res://Assest/Terrain/Terrain (16x16).png" id="2_ifi3i"]
 [ext_resource type="PackedScene" uid="uid://bn0v5nol6sgvr" path="res://Lib/npc.tscn" id="5_k25su"]
-[ext_resource type="Script" path="res://Lib/npc_2.gd" id="6_vtghh"]
+[ext_resource type="Script" path="res://Lib/level-3/npc-yisus.gd" id="6_crqi3"]
 [ext_resource type="PackedScene" uid="uid://c5jjwo5jrc56d" path="res://Lib/dialog.tscn" id="7_aeeuo"]
 [ext_resource type="PackedScene" uid="uid://dyaxcf6gvshik" path="res://Lib/player_1.tscn" id="7_okfkp"]
 [ext_resource type="Script" path="res://Lib/audio.gd" id="8_2atxt"]
+[ext_resource type="AudioStream" uid="uid://d2cy1phlaod3a" path="res://Assest/level-3/siu.mp3" id="8_de7je"]
 [ext_resource type="Texture2D" uid="uid://d3oy6rrihcmvy" path="res://Assest/obstaculo.png" id="8_kasey"]
 [ext_resource type="PackedScene" path="res://Lib/ghost.tscn" id="9_ttrp2"]
 [ext_resource type="PackedScene" uid="uid://x7jnwpnlvp7k" path="res://Lib/time.tscn" id="10_w5ok8"]
+[ext_resource type="AudioStream" uid="uid://c4vshgg6iyd05" path="res://Assest/level-3/win.mp3" id="10_wlo8m"]
 [ext_resource type="PackedScene" uid="uid://j26wf7f0e22p" path="res://Lib/pause.tscn" id="11_ltmgh"]
 [ext_resource type="PackedScene" uid="uid://df7vn437m54hd" path="res://Lib/Life.tscn" id="12_bxu2l"]
-[ext_resource type="PackedScene" uid="uid://c6v4qrijm1p45" path="res://Lib/portal.tscn" id="13_h0y7a"]
+[ext_resource type="PackedScene" uid="uid://cl4mbfaxa7fwx" path="res://Lib/portal.tscn" id="13_h0y7a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3hfek"]
 texture = ExtResource("2_ifi3i")
@@ -114,6 +117,7 @@ size = Vector2(44, 46.664)
 [node name="Mundo4" type="Node2D"]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_ygklj")
 volume_db = -6.667
 max_distance = 200000.0
 script = ExtResource("8_2atxt")
@@ -137,7 +141,7 @@ position = Vector2(270, -679)
 
 [node name="npc" parent="." instance=ExtResource("5_k25su")]
 position = Vector2(563, -642)
-script = ExtResource("6_vtghh")
+script = ExtResource("6_crqi3")
 
 [node name="Dialog" parent="npc" instance=ExtResource("7_aeeuo")]
 visible = false
@@ -145,7 +149,7 @@ offset_left = 163.0
 offset_top = 103.0
 offset_right = 763.0
 offset_bottom = 703.0
-dialogues = Array[String](["Hola", "Cuanto es  3 x 7?"])
+dialogues = Array[String](["Si tienes 950 manzanas y das 236 a tus amigos,", " ¿cuántas manzanas te quedan?"])
 
 [node name="LineEdit" type="LineEdit" parent="npc/Dialog"]
 layout_mode = 0
@@ -176,9 +180,6 @@ offset_right = 213.2
 offset_bottom = 343.8
 text = "Check"
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="npc"]
-volume_db = -2.667
-
 [node name="npcStoper" type="Node2D" parent="npc"]
 position = Vector2(72, 688)
 
@@ -194,9 +195,17 @@ position = Vector2(16, 0)
 position = Vector2(334, -412)
 shape = SubResource("RectangleShape2D_1rj5a")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="npc"]
+stream = ExtResource("8_de7je")
+volume_db = 8.005
+
+[node name="WinAudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="npc"]
+stream = ExtResource("10_wlo8m")
+volume_db = 19.26
+
 [node name="npc2" parent="." instance=ExtResource("5_k25su")]
 position = Vector2(344, 140)
-script = ExtResource("6_vtghh")
+script = ExtResource("6_crqi3")
 
 [node name="Dialog" parent="npc2" instance=ExtResource("7_aeeuo")]
 visible = false
@@ -204,7 +213,7 @@ offset_left = 134.0
 offset_top = 56.0
 offset_right = 734.0
 offset_bottom = 656.0
-dialogues = Array[String](["Hola", "Cuanto es  8 x 7?"])
+dialogues = Array[String](["Laura tiene 320 canicas. Compra 150 más ", "y luego regala 120 a su amigo. ¿Cuántas canicas le quedan?"])
 
 [node name="LineEdit" type="LineEdit" parent="npc2/Dialog"]
 layout_mode = 0
@@ -235,9 +244,6 @@ offset_right = 213.2
 offset_bottom = 343.8
 text = "Check"
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="npc2"]
-volume_db = -2.667
-
 [node name="npcStoper" type="Node2D" parent="npc2"]
 position = Vector2(72, 688)
 
@@ -253,9 +259,17 @@ position = Vector2(16, 0)
 position = Vector2(338, -498)
 shape = SubResource("RectangleShape2D_1rj5a")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="npc2"]
+stream = ExtResource("8_de7je")
+volume_db = 8.005
+
+[node name="WinAudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="npc2"]
+stream = ExtResource("10_wlo8m")
+volume_db = 19.26
+
 [node name="npc3" parent="." instance=ExtResource("5_k25su")]
 position = Vector2(55, -484)
-script = ExtResource("6_vtghh")
+script = ExtResource("6_crqi3")
 
 [node name="Dialog" parent="npc3" instance=ExtResource("7_aeeuo")]
 visible = false
@@ -263,7 +277,7 @@ offset_left = 65.0
 offset_top = 33.0
 offset_right = 665.0
 offset_bottom = 633.0
-dialogues = Array[String](["Hola", "Cuanto es  6 x 9?"])
+dialogues = Array[String](["En una granja hay 24 gallinas. ", "Cada gallina pone 7 huevos al día.", " ¿Cuántos huevos ponen en total ", "todas las gallinas en una semana?"])
 
 [node name="LineEdit" type="LineEdit" parent="npc3/Dialog"]
 layout_mode = 0
@@ -294,9 +308,6 @@ offset_right = 213.2
 offset_bottom = 343.8
 text = "Check"
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="npc3"]
-volume_db = -2.667
-
 [node name="npcStoper" type="Node2D" parent="npc3"]
 position = Vector2(72, 688)
 
@@ -312,9 +323,17 @@ position = Vector2(16, 0)
 position = Vector2(266, -531)
 shape = SubResource("RectangleShape2D_1rj5a")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="npc3"]
+stream = ExtResource("8_de7je")
+volume_db = 8.005
+
+[node name="WinAudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="npc3"]
+stream = ExtResource("10_wlo8m")
+volume_db = 19.26
+
 [node name="npc4" parent="." instance=ExtResource("5_k25su")]
 position = Vector2(1170, -564)
-script = ExtResource("6_vtghh")
+script = ExtResource("6_crqi3")
 
 [node name="Dialog" parent="npc4" instance=ExtResource("7_aeeuo")]
 visible = false
@@ -322,7 +341,7 @@ offset_left = 92.0
 offset_top = 43.0
 offset_right = 692.0
 offset_bottom = 643.0
-dialogues = Array[String](["Hola", "Cuanto es  6 x 7?"])
+dialogues = Array[String](["Una piscina tiene 12 metros de largo, ", "6 metros de ancho y 2 metros de profundidad.", " ¿Cuál es el volumen de la piscina en metros cúbicos?"])
 
 [node name="LineEdit" type="LineEdit" parent="npc4/Dialog"]
 layout_mode = 0
@@ -353,9 +372,6 @@ offset_right = 213.2
 offset_bottom = 343.8
 text = "Check"
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="npc4"]
-volume_db = -2.667
-
 [node name="npcStoper" type="Node2D" parent="npc4"]
 position = Vector2(72, 688)
 
@@ -371,9 +387,17 @@ position = Vector2(16, 0)
 position = Vector2(379, -450)
 shape = SubResource("RectangleShape2D_1rj5a")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="npc4"]
+stream = ExtResource("8_de7je")
+volume_db = 8.005
+
+[node name="WinAudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="npc4"]
+stream = ExtResource("10_wlo8m")
+volume_db = 19.26
+
 [node name="npc5" parent="." instance=ExtResource("5_k25su")]
 position = Vector2(865, 221)
-script = ExtResource("6_vtghh")
+script = ExtResource("6_crqi3")
 
 [node name="Dialog" parent="npc5" instance=ExtResource("7_aeeuo")]
 visible = false
@@ -381,7 +405,7 @@ offset_left = 83.0
 offset_top = 43.0
 offset_right = 683.0
 offset_bottom = 643.0
-dialogues = Array[String](["Hola", "Cuanto es  5 x 9?"])
+dialogues = Array[String](["Un rectángulo tiene 8 metros de largo y 5 metros de ancho.", " ¿Cuál es su perímetro?"])
 
 [node name="LineEdit" type="LineEdit" parent="npc5/Dialog"]
 layout_mode = 0
@@ -412,9 +436,6 @@ offset_right = 213.2
 offset_bottom = 343.8
 text = "Check"
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="npc5"]
-volume_db = -2.667
-
 [node name="npcStoper" type="Node2D" parent="npc5"]
 position = Vector2(72, 688)
 
@@ -429,6 +450,14 @@ position = Vector2(16, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="npc5/npcStoper/StaticBody2D"]
 position = Vector2(225, -448)
 shape = SubResource("RectangleShape2D_1rj5a")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="npc5"]
+stream = ExtResource("8_de7je")
+volume_db = 8.005
+
+[node name="WinAudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="npc5"]
+stream = ExtResource("10_wlo8m")
+volume_db = 19.26
 
 [node name="Time" parent="." instance=ExtResource("10_w5ok8")]
 
@@ -463,8 +492,8 @@ position = Vector2(341, -213)
 [node name="Portal" parent="." instance=ExtResource("13_h0y7a")]
 position = Vector2(1711, 814)
 
-[connection signal="pressed" from="npc/Dialog/Button" to="npc" method="_on_button_pressed" binds= ["21"]]
-[connection signal="pressed" from="npc2/Dialog/Button" to="npc2" method="_on_button_pressed" binds= ["56"]]
-[connection signal="pressed" from="npc3/Dialog/Button" to="npc3" method="_on_button_pressed" binds= ["54"]]
-[connection signal="pressed" from="npc4/Dialog/Button" to="npc4" method="_on_button_pressed" binds= ["42"]]
-[connection signal="pressed" from="npc5/Dialog/Button" to="npc5" method="_on_button_pressed" binds= ["45"]]
+[connection signal="pressed" from="npc/Dialog/Button" to="npc" method="_on_button_pressed" binds= ["714"]]
+[connection signal="pressed" from="npc2/Dialog/Button" to="npc2" method="_on_button_pressed" binds= ["350"]]
+[connection signal="pressed" from="npc3/Dialog/Button" to="npc3" method="_on_button_pressed" binds= ["1176"]]
+[connection signal="pressed" from="npc4/Dialog/Button" to="npc4" method="_on_button_pressed" binds= ["144"]]
+[connection signal="pressed" from="npc5/Dialog/Button" to="npc5" method="_on_button_pressed" binds= ["26"]]
