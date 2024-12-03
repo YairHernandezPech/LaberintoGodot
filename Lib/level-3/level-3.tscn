@@ -1009,8 +1009,8 @@ position = Vector2(654, -84)
 rotation = 0.0685201
 script = ExtResource("11_lrx0i")
 speed = 400.0
-point_a = Vector2(192, -85)
-point_b = Vector2(600, -85)
+point_a = Vector2(0, 0)
+point_b = Vector2(0, 0)
 
 [node name="monster4" parent="." instance=ExtResource("9_we31t")]
 position = Vector2(153, 3)
