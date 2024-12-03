@@ -13,10 +13,10 @@
 [ext_resource type="Script" path="res://Lib/level-3/npc-yisus.gd" id="12_fvurw"]
 [ext_resource type="AudioStream" uid="uid://c4vshgg6iyd05" path="res://Assest/level-3/win.mp3" id="14_xltgh"]
 [ext_resource type="AudioStream" uid="uid://d2cy1phlaod3a" path="res://Assest/level-3/siu.mp3" id="15_70y7n"]
-[ext_resource type="PackedScene" uid="uid://cl4mbfaxa7fwx" path="res://Lib/portal.tscn" id="16_6c76f"]
+[ext_resource type="PackedScene" uid="uid://c6v4qrijm1p45" path="res://Lib/portal.tscn" id="16_6c76f"]
 [ext_resource type="Script" path="res://Lib/mundo2/portal_2_.gd" id="17_cvqei"]
 [ext_resource type="AudioStream" uid="uid://536foe043f8" path="res://Assest/level-3/Green.mp3" id="18_fxiop"]
-[ext_resource type="PackedScene" uid="uid://dl30wst27byey" path="res://Lib/monster.tscn" id="23_jbppk"]
+[ext_resource type="PackedScene" uid="uid://cbi2f0rdic7tn" path="res://Lib/monster.tscn" id="23_jbppk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8qj2r"]
 texture = ExtResource("1_xud2y")
@@ -753,7 +753,6 @@ position = Vector2(1741, 5)
 script = ExtResource("12_fvurw")
 
 [node name="Dialog" parent="npc12" instance=ExtResource("8_1oyf0")]
-visible = false
 offset_left = 96.0
 offset_top = 31.0
 offset_right = 696.0
@@ -818,7 +817,6 @@ position = Vector2(1553, 539)
 script = ExtResource("12_fvurw")
 
 [node name="Dialog" parent="npc13" instance=ExtResource("8_1oyf0")]
-visible = false
 offset_left = 96.0
 offset_top = 31.0
 offset_right = 696.0
@@ -883,7 +881,6 @@ position = Vector2(1002, 739)
 script = ExtResource("12_fvurw")
 
 [node name="Dialog" parent="npc14" instance=ExtResource("8_1oyf0")]
-visible = false
 offset_left = 96.0
 offset_top = 31.0
 offset_right = 696.0
@@ -948,7 +945,6 @@ position = Vector2(996, 350)
 script = ExtResource("12_fvurw")
 
 [node name="Dialog" parent="npc15" instance=ExtResource("8_1oyf0")]
-visible = false
 offset_left = 96.0
 offset_top = 31.0
 offset_right = 696.0
@@ -1013,7 +1009,6 @@ position = Vector2(663, 746)
 script = ExtResource("12_fvurw")
 
 [node name="Dialog" parent="npc16" instance=ExtResource("8_1oyf0")]
-visible = false
 offset_left = 96.0
 offset_top = 31.0
 offset_right = 696.0
@@ -1078,7 +1073,6 @@ position = Vector2(1493, 1075)
 script = ExtResource("12_fvurw")
 
 [node name="Dialog" parent="npc17" instance=ExtResource("8_1oyf0")]
-visible = false
 offset_left = 96.0
 offset_top = 31.0
 offset_right = 696.0

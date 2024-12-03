@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dl30wst27byey"]
+[gd_scene load_steps=17 format=3 uid="uid://cbi2f0rdic7tn"]
 
 [ext_resource type="Texture2D" uid="uid://bnm8un1tfyail" path="res://Assest/Idle (44x30).png" id="1_ntimw"]
 [ext_resource type="Script" path="res://Lib/monster.gd" id="1_wd3r8"]
@@ -78,7 +78,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
-"speed": 5.0
+"speed": 9.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_taged"]
@@ -87,7 +87,7 @@ radius = 168.19
 [sub_resource type="CircleShape2D" id="CircleShape2D_ucvca"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uey4p"]
-radius = 24.0
+radius = 14.0
 
 [node name="monster" type="CharacterBody2D"]
 script = ExtResource("1_wd3r8")
@@ -96,7 +96,7 @@ script = ExtResource("1_wd3r8")
 position = Vector2(328, 192)
 sprite_frames = SubResource("SpriteFrames_spvl2")
 animation = &"walk"
-frame_progress = 0.327553
+frame_progress = 0.341529
 
 [node name="Area2D" type="Area2D" parent="."]
 

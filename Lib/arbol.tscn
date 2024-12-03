@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cofuctikcw75v"]
+
+[ext_resource type="Texture2D" uid="uid://c2p088feifeii" path="res://Assest/fondo/ForestVegetation/ForestVegetation/forest_tiles_trees_shadows.png" id="1_yy3tu"]
+[ext_resource type="Texture2D" uid="uid://co8ffevg8cx0r" path="res://Assest/fondo/ForestVegetation/ForestVegetation/forest_tiles_trees.png" id="2_m5tib"]
+
+[node name="Arbol" type="CharacterBody2D"]
+
+[node name="ForestTilesTreesShadows" type="Sprite2D" parent="."]
+position = Vector2(233, 64)
+texture = ExtResource("1_yy3tu")
+
+[node name="ForestTilesTrees" type="Sprite2D" parent="."]
+position = Vector2(237, 57)
+texture = ExtResource("2_m5tib")

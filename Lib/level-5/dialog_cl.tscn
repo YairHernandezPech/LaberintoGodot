@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://b57dajl13mn46"]
+
+[ext_resource type="Texture2D" uid="uid://j24n428ri242" path="res://Assest/dialog.png" id="1_i54m5"]
+[ext_resource type="Script" path="res://Lib/level-5/dialog_cl.gd" id="1_omd3l"]
+
+[node name="Dialogcl" type="CanvasLayer"]
+script = ExtResource("1_omd3l")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 157.0
+offset_top = 40.0
+offset_right = 1152.0
+offset_bottom = 896.0
+texture = ExtResource("1_i54m5")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 230.0
+offset_top = 445.0
+offset_right = 920.0
+offset_bottom = 524.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30

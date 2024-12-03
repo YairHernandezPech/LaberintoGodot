@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://d1kjkdt3ba4j7"]
+
+[ext_resource type="Texture2D" uid="uid://cnvrb5v5pge27" path="res://Assest/personaje.png" id="1_kkal4"]
+[ext_resource type="Script" path="res://Lib/level-5/npclvl_5.gd" id="1_vadc8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdh5b"]
+atlas = ExtResource("1_kkal4")
+region = Rect2(240, 0, 80, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_akf1t"]
+atlas = ExtResource("1_kkal4")
+region = Rect2(320, 0, 80, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihijd"]
+atlas = ExtResource("1_kkal4")
+region = Rect2(400, 0, 80, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mimy1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdh5b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_akf1t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ihijd")
+}],
+"loop": true,
+"name": &"npc",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yq0sj"]
+radius = 70.8317
+
+[node name="npclvl5" type="CharacterBody2D"]
+script = ExtResource("1_vadc8")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(259.5, 130)
+scale = Vector2(0.6125, 0.65)
+sprite_frames = SubResource("SpriteFrames_mimy1")
+animation = &"npc"
+frame_progress = 0.85787
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(265.5, 123)
+scale = Vector2(0.7625, 0.766667)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-8.52459, 16.9565)
+shape = SubResource("CircleShape2D_yq0sj")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

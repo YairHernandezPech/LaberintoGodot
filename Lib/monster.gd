@@ -33,7 +33,7 @@ func _on_collision_area_body_entered(body: Node2D) -> void:
 	pass # Replace with function body.
 	
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if player_detected and player:
 		var direction = (player.global_position - global_position).normalized()
 		velocity = direction * speed
