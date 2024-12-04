@@ -9,11 +9,7 @@
 [ext_resource type="Script" path="res://Lib/obstaculo_2.gd" id="6_tmnbs"]
 [ext_resource type="Texture2D" uid="uid://d3oy6rrihcmvy" path="res://Assest/obstaculo.png" id="7_s5fga"]
 [ext_resource type="Script" path="res://Lib/obstaculo_5.gd" id="8_7lm1r"]
-<<<<<<< HEAD
 [ext_resource type="PackedScene" path="res://Lib/monster.tscn" id="9_we31t"]
-=======
-[ext_resource type="PackedScene" uid="uid://cbi2f0rdic7tn" path="res://Lib/monster.tscn" id="9_we31t"]
->>>>>>> level-5
 [ext_resource type="PackedScene" uid="uid://dyaxcf6gvshik" path="res://Lib/player_1.tscn" id="10_7onrx"]
 [ext_resource type="PackedScene" uid="uid://bn0v5nol6sgvr" path="res://Lib/npc.tscn" id="11_i8syw"]
 [ext_resource type="Script" path="res://Lib/level-3/monster.-yisusgd.gd" id="11_lrx0i"]

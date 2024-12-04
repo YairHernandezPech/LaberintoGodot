@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://ko27r5itk0l"]
+[gd_scene load_steps=24 format=3 uid="uid://ko27r5itk0l"]
 
 [ext_resource type="Texture2D" uid="uid://cbmb5cipyhb2u" path="res://Assest/Terrain/Terrain (16x16).png" id="1_aie8f"]
 [ext_resource type="Texture2D" uid="uid://dm5idhok3sh8u" path="res://Assest/Terrain/terrian2.png" id="1_h2dg2"]
@@ -11,11 +11,12 @@
 [ext_resource type="Script" path="res://Lib/obstaculo_5.gd" id="11_0nxmv"]
 [ext_resource type="AudioStream" uid="uid://d2cy1phlaod3a" path="res://Assest/level-3/siu.mp3" id="12_upbsj"]
 [ext_resource type="PackedScene" uid="uid://x7jnwpnlvp7k" path="res://Lib/time.tscn" id="12_upqem"]
+[ext_resource type="PackedScene" uid="uid://b57dajl13mn46" path="res://Lib/level-5/dialog_cl.tscn" id="13_2fcml"]
 [ext_resource type="Script" path="res://Lib/level-3/npc-yisus.gd" id="13_5d7nd"]
 [ext_resource type="AudioStream" uid="uid://c4vshgg6iyd05" path="res://Assest/level-3/win.mp3" id="14_k15wd"]
 [ext_resource type="AudioStream" uid="uid://536foe043f8" path="res://Assest/level-3/Green.mp3" id="15_td34w"]
-[ext_resource type="PackedScene" path="res://Lib/monster.tscn" id="22_fncje"]
-[ext_resource type="PackedScene" path="res://Lib/portal.tscn" id="23_xcdge"]
+[ext_resource type="PackedScene" uid="uid://cbi2f0rdic7tn" path="res://Lib/monster.tscn" id="22_fncje"]
+[ext_resource type="PackedScene" uid="uid://c6v4qrijm1p45" path="res://Lib/portal.tscn" id="23_xcdge"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8p5fm"]
 texture = ExtResource("1_h2dg2")
@@ -441,6 +442,10 @@ dialogues = Array[String](["Hola, bienvenido a nuestro laberinto.", "Espero que 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="npc"]
 stream = ExtResource("12_upbsj")
 volume_db = 8.005
+
+[node name="Dialogcl" parent="npc" instance=ExtResource("13_2fcml")]
+visible = false
+dialogues = Array[String](["Hola, bienvenido a nuestro laberinto.", "Espero que disfrutes tu estancia.", "Es hora de poner a prueba tu", "Inteligencia matematica"])
 
 [node name="npc6" parent="." instance=ExtResource("4_miwj6")]
 position = Vector2(128, -296)
