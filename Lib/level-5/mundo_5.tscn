@@ -321,7 +321,6 @@ layer_0/tile_data = PackedInt32Array(327776, 917504, 11, 393312, 917504, 11, 458
 position = Vector2(1310, -716)
 
 [node name="Dialogcl" parent="door" instance=ExtResource("8_fw0tj")]
-visible = false
 dialogues = Array[String](["Ingresa la llave maestra. Pulsa X para ingresar la llave."])
 
 [node name="dog" parent="." instance=ExtResource("24_wgj03")]
