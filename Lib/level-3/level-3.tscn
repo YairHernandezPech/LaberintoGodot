@@ -18,11 +18,7 @@
 [ext_resource type="Script" path="res://Lib/level-3/npc.gd" id="14_vajc7"]
 [ext_resource type="AudioStream" uid="uid://d2cy1phlaod3a" path="res://Assest/level-3/siu.mp3" id="15_vhyrh"]
 [ext_resource type="AudioStream" uid="uid://c4vshgg6iyd05" path="res://Assest/level-3/win.mp3" id="17_6vmrt"]
-<<<<<<< HEAD
 [ext_resource type="PackedScene" path="res://Lib/portal.tscn" id="18_dd6lq"]
-=======
-[ext_resource type="PackedScene" uid="uid://c6v4qrijm1p45" path="res://Lib/portal.tscn" id="18_dd6lq"]
->>>>>>> level-5
 [ext_resource type="Texture2D" uid="uid://c8l1h53ymwdv3" path="res://Assest/level-3/Sprites/11-Door/Idle.png" id="20_rvjkb"]
 [ext_resource type="Script" path="res://Lib/level-3/portal3.gd" id="20_thhy1"]
 [ext_resource type="AudioStream" uid="uid://536foe043f8" path="res://Assest/level-3/Green.mp3" id="21_byhdu"]
